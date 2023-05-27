@@ -1,19 +1,19 @@
 import React, { useCallback } from "react";
 import { makeStyles } from "@mui/styles";
 import Typography from "@mui/material/Typography";
-// import DarkMode3 from "../../dark-mode/3/dark-mode";
 import Typewriter from "typewriter-effect";
 import HTMLReactParser from "html-react-parser";
 import Particles from "react-particles";
 import Image from "../../Assets/Images/profile-bg.png";
 import Image2 from "../../Assets/Images/sandeep-v2.webp";
 import { loadFull } from "tsparticles";
-import { Button } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import DarkMode from "./../../Services/Dark-mode";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,16 +64,40 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: theme.typography.fontWeightMedium,
       },
     },
-    "& .content-holder": {
-      zIndex: 1,
-      "& .profile-image": {
-        position: "absolute",
-        right: "116px",
-        bottom: "-7px",
-        "& .img-holder": {
-          height: "550px",
-          width: "500px",
-          backgroundPosition: "100% 10%",
+    "& .MuiGrid-root": {
+      "& .MuiGrid-item": {
+        "& .slider-content": {
+          position: "relative",
+          zIndex: 3,
+          "& .title": {
+            fontWeight: theme.typography.fontWeightBold,
+            position: "relative",
+            zIndex: 2,
+            marginBottom: theme.spacing(3),
+          },
+          "& .title, .description": {
+            color: "#fff",
+          },
+          "& .Typewriter": {
+            marginBottom: theme.spacing(5),
+            "& .Typewriter__wrapper": {
+              fontSize: theme.typography.h3.fontSize,
+              fontWeight: theme.typography.fontWeightMedium,
+              color: "#fff",
+            },
+          },
+          "& .MuiButtonBase-root": {
+            background: "#fff",
+            padding: theme.spacing(3, 4),
+            borderRadius: theme.shape.borderRadius7,
+            color: theme.palette.text.gray,
+            fontWeight: theme.typography.fontWeightBold,
+            minWidth: "200px",
+            fontSize: theme.typography.h3.fontSize,
+          },
+        },
+        "& .profile-image": {
+          position: "relative",
           "&::before": {
             content: "''",
             position: "absolute",
@@ -83,88 +107,99 @@ const useStyles = makeStyles((theme) => ({
             height: "500px",
             width: "700px",
             background: `url('${Image}')`,
-            zIndex: -2,
+            zIndex: 1,
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "bottom center",
           },
-          "&::after": {
-            content: "''",
-            position: "absolute",
-            left: "50%",
-            bottom: "-130px",
-            transform: "translateX(-50%)",
-            height: "600px",
-            width: "600px",
-            borderRadius: "50%",
-            background: `linear-gradient(to bottom, transparent 25%, ${theme.palette.primary.main} 65%)`,
-            zIndex: 1,
+          "& .img-holder": {
+            backgroundPosition: "100% 10%",
+            position: "relative",
+            zIndex: 2,
+            "&::before": {
+              content: "''",
+              position: "absolute",
+              left: "50%",
+              bottom: "-130px",
+              transform: "translateX(-50%)",
+              borderRadius: "50%",
+              background: `linear-gradient(to bottom, transparent 25%, ${theme.palette.primary.main} 65%)`,
+              zIndex: 1,
+            },
           },
         },
       },
-      "& .title": {
-        fontWeight: theme.typography.fontWeightBold,
-        position: "relative",
-        zIndex: 2,
-        marginBottom: theme.spacing(3),
-      },
-      "& .title, .description": {
-        color: "#fff",
-      },
-      "& .Typewriter": {
-        marginBottom: theme.spacing(5),
-        "& .Typewriter__wrapper": {
-          fontSize: theme.typography.h3.fontSize,
-          fontWeight: theme.typography.fontWeightMedium,
-          color: "#fff",
-        },
-      },
-      "& .MuiButtonBase-root": {
-        background: "#fff",
-        padding: theme.spacing(3, 4),
-        borderRadius: theme.shape.borderRadius7,
-        color: theme.palette.text.gray,
-        fontWeight: theme.typography.fontWeightBold,
-        minWidth: "200px",
-        fontSize: theme.typography.h3.fontSize,
-      },
     },
-    "@media(max-width: 600px)": {
+    [theme.breakpoints.down("sm")]: {
       height: "60vh",
-      padding: theme.spacing(10, 3, 0),
+      padding: theme.spacing(10, 0),
       justifyContent: "flex-start",
-      "& .content-holder": {
-        "& .profile-image": {
-          "& .img": {
-            height: "330px",
+      "& .MuiGrid-root": {
+        "& .MuiGrid-item": {
+          "& .slider-content": {
+            padding: theme.spacing(7),
+            "& .title": {
+              fontSize: theme.typography.h1,
+            },
           },
-        },
-        "& .title": {
-          fontSize: theme.typography.h1.fontSize,
+          "& .profile-image": {
+            "& .img-holder": {
+              height: "330px",
+              width: "330px",
+              "&::before": {
+                height: "350px",
+                width: "100%",
+              },
+            },
+          },
         },
       },
     },
-    "@media(min-width: 768px)": {
+    [theme.breakpoints.between("sm", "md")]: {
       height: "60vh",
       justifyContent: "center",
-      padding: theme.spacing(10, 3, 0),
-      "& .content-holder": {
-        "& .title": {
-          fontSize: theme.typography.customFont2,
+      padding: theme.spacing(10, 0),
+      "& .MuiGrid-root": {
+        "& .MuiGrid-item": {
+          "& .slider-content": {
+            padding: theme.spacing(7),
+            "& .title": {
+              fontSize: theme.typography.customFont2,
+            },
+          },
+          "& .profile-image": {
+            "& .img-holder": {
+              height: "550px",
+              width: "500px",
+              "&::before": {
+                height: "600px",
+                width: "600px",
+              },
+            },
+          },
         },
       },
     },
-    "@media(min-width: 992px)": {
+    [theme.breakpoints.up("lg")]: {
       height: "100vh",
       padding: theme.spacing(0, 7),
-      "& .content-holder": {
-        "& .profile-image": {
-          "& .img": {
-            height: "400px",
+      "& .MuiGrid-root": {
+        "& .MuiGrid-item": {
+          "& .slider-content": {
+            "& .title": {
+              fontSize: theme.typography.customFont3,
+            },
           },
-        },
-        "& .title": {
-          fontSize: theme.typography.customFont3,
+          "& .profile-image": {
+            "& .img-holder": {
+              height: "550px",
+              width: "500px",
+              "&::before": {
+                height: "600px",
+                width: "600px",
+              },
+            },
+          },
         },
       },
     },
@@ -203,7 +238,7 @@ const HomeSlider = () => {
 
   return (
     <>
-      {/*<DarkMode3 profile={profile}/>*/}
+      <DarkMode />
       {slider && slider.length ? (
         <section className={classes.root}>
           <Particles
@@ -400,35 +435,45 @@ const HomeSlider = () => {
             const sliderDescriptionFinalText =
               sliderDescription[0]?.props?.children;
             return (
-              <Typography
-                component="div"
-                className="content-holder"
-                align="left"
+              <Grid
+                container
+                spacing={4}
                 key={i + "_"}
+                alignItems="center"
+                sx={{ pt: { sm: 0, md: 0, lg: 10 } }}
               >
-                <Typography component="div" className="profile-image">
-                  <Typography
-                    component="div"
-                    className="img-holder background-image"
-                    style={{
-                      backgroundImage: `url('${Image2}')`,
-                    }}
-                  />
-                </Typography>
-                <Typography variant="h1" className="title">
-                  {item.title}
-                </Typography>
-                <Typewriter
-                  options={{
-                    strings: [`${item.summary}`, sliderDescriptionFinalText],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
-                <Button variant="contained" href="#" download>
-                  My Resume
-                </Button>
-              </Typography>
+                <Grid item sm={12} md={12} lg={6}>
+                  <Typography component="div" className="slider-content">
+                    <Typography variant="h1" className="title">
+                      {item.title}
+                    </Typography>
+                    <Typewriter
+                      options={{
+                        strings: [
+                          `${item.summary}`,
+                          sliderDescriptionFinalText,
+                        ],
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                    <Button variant="contained" href="#" download>
+                      My Resume
+                    </Button>
+                  </Typography>
+                </Grid>
+                <Grid item sm={12} md={12} lg={6}>
+                  <Typography component="div" className="profile-image">
+                    <Typography
+                      component="div"
+                      className="img-holder background-image"
+                      style={{
+                        backgroundImage: `url('${Image2}')`,
+                      }}
+                    />
+                  </Typography>
+                </Grid>
+              </Grid>
             );
           })}
         </section>

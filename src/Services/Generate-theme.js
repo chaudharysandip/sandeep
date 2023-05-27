@@ -1,11 +1,13 @@
 import { createTheme } from "@mui/material";
 
-//TODO Write code for dark mode
-const generateTheme = (theme, modeName) =>
+const generateTheme = (modeName) =>
   createTheme({
     palette: {
       primary: {
         main: "#000",
+        ...(modeName === "light" && {
+          main: "#fff",
+        }),
       },
       secondary: {
         main: "#240046",

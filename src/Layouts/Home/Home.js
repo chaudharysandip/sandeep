@@ -1,3 +1,4 @@
+import { makeStyles } from "@mui/styles";
 import React, { lazy } from "react";
 
 const Slider = lazy(() => import("Components/Slider"));
@@ -9,9 +10,16 @@ const Testimonial = lazy(() => import("Components/Testimonial"));
 const ApplyBanner = lazy(() => import("Components/Apply-banner"));
 const Contact = lazy(() => import("Components/Contact"));
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    background: `linear-gradient(${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+  },
+}));
+
 const Home = () => {
+  const classes = useStyles();
   return (
-    <main>
+    <main className={classes.root}>
       <Slider />
       <WhyChooseUs />
       <ServiceBlock />
