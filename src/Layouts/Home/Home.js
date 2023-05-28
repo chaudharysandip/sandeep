@@ -12,7 +12,10 @@ const Contact = lazy(() => import("Components/Contact"));
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: `linear-gradient(${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+    background:
+      theme.palette.mode === "dark"
+        ? `linear-gradient(${theme.palette.primary.main}, ${theme.palette.secondary.main})`
+        : `linear-gradient(-160deg, #fdfaff, #3a0ca3)`,
   },
 }));
 

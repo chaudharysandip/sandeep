@@ -27,8 +27,6 @@ const App = () => {
     setLoader(false);
   }, [modeName]);
 
-  console.log(modeName);
-
   return loader ? (
     <Loader />
   ) : (

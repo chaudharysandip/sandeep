@@ -10,8 +10,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background:
-      theme.palette.mode === "light" ? theme.palette.primary.main : "#2b2b2b",
+    background: theme.palette.primary.main,
     padding: theme.spacing(10, 0),
     "& .footer": {
       "& .copy-right": {
@@ -23,13 +22,13 @@ const useStyles = makeStyles((theme) => ({
                 marginRight: theme.spacing(3),
               },
               "& a": {
-                color: "#fff",
+                color: theme.palette.text.light,
                 transition: theme.transitions.easing.easeOut,
                 "& .MuiSvgIcon-root": {
                   transition: theme.transitions.easing.easeOut,
                 },
                 "&:hover": {
-                  color: "#fff",
+                  color: theme.palette.text.light,
                   "& .MuiSvgIcon-root": {
                     transform: "scale(1.2) rotate(-5deg)",
                   },
@@ -39,13 +38,13 @@ const useStyles = makeStyles((theme) => ({
           },
           "& .follow-me": {
             fontSize: theme.typography.h3,
-            color: "#fff",
+            color: theme.palette.text.light,
             fontWeight: theme.typography.fontWeightMedium,
           },
         },
         "& .copy-right-text": {
           fontSize: theme.typography.h4,
-          color: "#fff",
+          color: theme.palette.text.light,
           fontWeight: theme.typography.fontWeightSemiBold,
         },
       },

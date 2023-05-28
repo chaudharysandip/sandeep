@@ -11,8 +11,11 @@ import Image6 from "Assets/Images/figma.svg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& .service-block-21": {
-      background: theme.palette.primary.main,
+    "& .why-choose": {
+      background:
+        theme.palette.mode === "dark"
+          ? theme.palette.primary.main
+          : "#ffffff0f",
       borderRadius: "15px",
       "& .text-holder": {
         position: "relative",
@@ -37,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
           WebkitTextFillColor: "transparent",
         },
         "& .title": {
-          color: "#fff",
+          color: theme.palette.text.light,
           fontSize: theme.typography.customFont2,
           fontWeight: theme.typography.fontWeightSemiBold,
         },
@@ -76,12 +79,12 @@ const useStyles = makeStyles((theme) => ({
               position: "relative",
               zIndex: 1,
               "& .service-title": {
-                color: "#fff",
+                color: theme.palette.text.light,
                 fontSize: theme.typography.h2,
                 fontWeight: theme.typography.fontWeightSemiBold,
               },
               "& .description": {
-                color: "#fff",
+                color: theme.palette.text.descriptionText,
                 fontWeight: theme.typography.fontWeightMedium,
                 lineHeight: 1.7,
               },
@@ -99,19 +102,19 @@ const useStyles = makeStyles((theme) => ({
     },
     "@media(max-width: 600px)": {
       padding: theme.spacing(0, 2, 10),
-      "& .service-block-21": {
+      "& .why-choose": {
         padding: theme.spacing(5),
       },
     },
     "@media(min-width: 768px)": {
       padding: theme.spacing(0, 3, 10),
-      "& .service-block-21": {
+      "& .why-choose": {
         padding: theme.spacing(5),
       },
     },
     "@media(min-width: 992px)": {
       padding: theme.spacing(0, 7, 20),
-      "& .service-block-21": {
+      "& .why-choose": {
         padding: theme.spacing(20, 5),
       },
     },
@@ -162,7 +165,7 @@ const WhyChooseUs = () => {
 
   return facility && facility.length ? (
     <section className={classes.root}>
-      <Container className="service-block-21">
+      <Container className="why-choose">
         <Typography
           component="div"
           className="text-holder"

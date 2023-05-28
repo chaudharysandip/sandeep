@@ -27,13 +27,14 @@ const useStyles = makeStyles((theme) => ({
               "& .MuiTabs-flexContainer": {
                 "& .MuiButtonBase-root": {
                   borderRadius: "30px",
-                  color: "#fff",
+                  color: theme.palette.text.light,
                   textTransform: "uppercase",
                   fontWeight: theme.typography.fontWeightBold,
                   minWidth: "300px",
                   padding: theme.spacing(4, 3),
                   transition: theme.transitions.easing.easeOut,
                   "&.Mui-selected": {
+                    color: "#fff",
                     background: theme.palette.secondary.main,
                   },
                 },

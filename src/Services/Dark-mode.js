@@ -35,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
         },
       },
     },
+    [theme.breakpoints.down("sm")]: {
+      right: 30,
+    },
+    [theme.breakpoints.between("sm", "md")]: {
+      right: 30,
+    },
     [theme.breakpoints.up("lg")]: {
       right: 30,
     },
@@ -101,7 +107,6 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 const DarkMode = () => {
   const classes = useStyles();
   const { mode, setMode } = useContext(ModeContext);
-  console.log(mode);
   return (
     <div className={classes.root}>
       <div className="dark-mode">

@@ -31,7 +31,10 @@ const useStyles = makeStyles((theme) => ({
               transform: "translateX(-50%)",
               height: "100%",
               width: "100%",
-              background: `linear-gradient(to bottom, transparent 25%, ${theme.palette.primary.main} 65%)`,
+              background:
+                theme.palette.mode === "dark"
+                  ? `linear-gradient(to bottom, transparent 25%, ${theme.palette.primary.main} 65%)`
+                  : `linear-gradient(to bottom, transparent 25%, #8a70c6 65%)`,
               borderRadius: "50%",
             },
             "& .bg-stretch": {

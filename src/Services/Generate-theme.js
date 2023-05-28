@@ -18,7 +18,11 @@ const generateTheme = (modeName) =>
       text: {
         light: "#fff",
         gray: "#231F20",
-        descriptionText: "#5A5A5A",
+        descriptionText: "#fff",
+        ...(modeName === "light" && {
+          light: "#000",
+          descriptionText: "#5A5A5A",
+        }),
       },
       mode: modeName,
     },

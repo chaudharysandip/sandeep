@@ -14,6 +14,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import DarkMode from "./../../Services/Dark-mode";
+import MobileMenu from "Layouts/Header/Mobile-menu";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
             marginRight: theme.spacing(3),
           },
           "& a": {
-            color: "#fff",
+            color: theme.palette.text.light,
             transition: theme.transitions.easing.easeOut,
             display: "block",
             "& .MuiSvgIcon-root": {
@@ -60,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
         },
       },
       "& .follow-me": {
-        color: "#fff",
+        color: theme.palette.text.light,
         fontWeight: theme.typography.fontWeightMedium,
       },
     },
@@ -76,14 +77,14 @@ const useStyles = makeStyles((theme) => ({
             marginBottom: theme.spacing(3),
           },
           "& .title, .description": {
-            color: "#fff",
+            color: theme.palette.text.light,
           },
           "& .Typewriter": {
             marginBottom: theme.spacing(5),
             "& .Typewriter__wrapper": {
               fontSize: theme.typography.h3.fontSize,
               fontWeight: theme.typography.fontWeightMedium,
-              color: "#fff",
+              color: theme.palette.text.light,
             },
           },
           "& .MuiButtonBase-root": {
@@ -123,7 +124,10 @@ const useStyles = makeStyles((theme) => ({
               bottom: "-130px",
               transform: "translateX(-50%)",
               borderRadius: "50%",
-              background: `linear-gradient(to bottom, transparent 25%, ${theme.palette.primary.main} 65%)`,
+              background:
+                theme.palette.mode === "light"
+                  ? `linear-gradient(to bottom, transparent 25%, #ffffff4f 65%)`
+                  : `linear-gradient(to bottom, transparent 25%, ${theme.palette.primary.main} 65%)`,
               zIndex: 1,
             },
           },
@@ -239,6 +243,7 @@ const HomeSlider = () => {
   return (
     <>
       <DarkMode />
+      <MobileMenu />
       {slider && slider.length ? (
         <section className={classes.root}>
           <Particles
