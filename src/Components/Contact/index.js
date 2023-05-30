@@ -30,54 +30,52 @@ const useStyles = makeStyles((theme) => ({
 						},
 					},
 					'& .contact-address-holder': {
-						'& ul': {
-							marginBottom: theme.spacing(6),
-							'& li': {
-								display: 'flex',
-								alignItems: 'center',
-								gap: '10px',
-								'&:not(:last-child)': {
-									marginBottom: theme.spacing(5),
-								},
-								'&:nth-child(2)': {
-									'& .icon-holder': {
-										background:
-											'linear-gradient(to right, #ff0844 0%, #ffb199 100%)',
-									},
-								},
-								'&:nth-child(3)': {
-									'& .icon-holder': {
-										background:
-											'linear-gradient(to left, #43e97b 0%, #38f9d7 100%)',
-									},
-								},
+						marginBottom: theme.spacing(6),
+						'& li': {
+							display: 'flex',
+							alignItems: 'center',
+							gap: '10px',
+							'&:not(:last-child)': {
+								marginBottom: theme.spacing(5),
+							},
+							'&:nth-child(2)': {
 								'& .icon-holder': {
 									background:
-										'radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%)',
-									height: '60px',
-									width: '60px',
-									borderRadius: '50%',
-									display: 'grid',
-									placeItems: 'center',
-									color: '#fff',
+										'linear-gradient(to right, #ff0844 0%, #ffb199 100%)',
 								},
-								'& .divider': {
-									'& .contact-info-title': {
-										fontSize: theme.typography.h4,
-										color: '#cfcfcf',
-										fontWeight: theme.typography.fontWeightMedium,
-									},
-									'& a': {
-										color: '#fff',
-										fontWeight: theme.typography.fontWeightMedium,
-										fontSize: theme.typography.h3,
-									},
+							},
+							'&:nth-child(3)': {
+								'& .icon-holder': {
+									background:
+										'linear-gradient(to left, #43e97b 0%, #38f9d7 100%)',
+								},
+							},
+							'& .icon-holder': {
+								background:
+									'radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%)',
+								height: '60px',
+								width: '60px',
+								borderRadius: '50%',
+								display: 'grid',
+								placeItems: 'center',
+								color: '#fff',
+							},
+							'& .divider': {
+								'& .contact-info-title': {
+									fontSize: theme.typography.h4,
+									color: '#cfcfcf',
+									fontWeight: theme.typography.fontWeightMedium,
+								},
+								'& a': {
+									color: '#fff',
+									fontWeight: theme.typography.fontWeightMedium,
+									fontSize: theme.typography.h3,
 								},
 							},
 						},
-						"& iframe":{
-							borderRadius: "15px",
-						},
+					},
+					"& iframe":{
+						borderRadius: "15px",
 					},
 				},
 			},
@@ -119,54 +117,52 @@ const Contact = () => {
 						</Typography>
 					</Grid>
 					<Grid item lg={5} md={12} sm={12}>
-						<Typography component="div" className="contact-address-holder">
-							<ul>
-								<li>
-									<Typography component="div" className="icon-holder">
-										<MailOutlineRoundedIcon />
+						<Typography component="ul" className="contact-address-holder">
+							<li>
+								<Typography component="div" className="icon-holder">
+									<MailOutlineRoundedIcon />
+								</Typography>
+								<Typography component="div" className="divider">
+									<Typography variant="h6" className="contact-info-title">
+										Email
 									</Typography>
-									<Typography component="div" className="divider">
-										<Typography variant="h6" className="contact-info-title">
-											Email
-										</Typography>
-										<a href={`mailto: ${profile.email}`}>{profile.email}</a>
+									<a href={`mailto: ${profile.email}`}>{profile.email}</a>
+								</Typography>
+							</li>
+							<li>
+								<Typography component="div" className="icon-holder">
+									<LocationOnOutlinedIcon />
+								</Typography>
+								<Typography component="div" className="divider">
+									<Typography variant="h6" className="contact-info-title">
+										Address
 									</Typography>
-								</li>
-								<li>
-									<Typography component="div" className="icon-holder">
-										<LocationOnOutlinedIcon />
+									<a href="#">{profile.address}</a>
+								</Typography>
+							</li>
+							<li>
+								<Typography component="div" className="icon-holder">
+									<PermPhoneMsgOutlinedIcon />
+								</Typography>
+								<Typography component="div" className="divider">
+									<Typography variant="h6" className="contact-info-title">
+										Phone
 									</Typography>
-									<Typography component="div" className="divider">
-										<Typography variant="h6" className="contact-info-title">
-											Address
-										</Typography>
-										<a href="#">{profile.address}</a>
-									</Typography>
-								</li>
-								<li>
-									<Typography component="div" className="icon-holder">
-										<PermPhoneMsgOutlinedIcon />
-									</Typography>
-									<Typography component="div" className="divider">
-										<Typography variant="h6" className="contact-info-title">
-											Phone
-										</Typography>
-										<a href={`tel: ${profile.phone}`}>
-											{profile.phone}
-										</a>
-									</Typography>
-								</li>
-							</ul>
-							<iframe
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14133.189959105963!2d85.33556682080668!3d27.67719887742847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19f2804a02bf%3A0x85468199859b2d8d!2sKoteshwor%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1675942740983!5m2!1sen!2snp"
-								width="100%"
-								height="535"
-								style={{border: 0}}
-								allowFullScreen
-								loading="lazy"
-								referrerPolicy="no-referrer-when-downgrade"
-							/>
+									<a href={`tel: ${profile.phone}`}>
+										{profile.phone}
+									</a>
+								</Typography>
+							</li>
 						</Typography>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14133.189959105963!2d85.33556682080668!3d27.67719887742847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19f2804a02bf%3A0x85468199859b2d8d!2sKoteshwor%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1675942740983!5m2!1sen!2snp"
+							width="100%"
+							height="535"
+							style={{border: 0}}
+							allowFullScreen
+							loading="lazy"
+							referrerPolicy="no-referrer-when-downgrade"
+						/>
 					</Grid>
 				</Grid>
 				<ToastContainer />

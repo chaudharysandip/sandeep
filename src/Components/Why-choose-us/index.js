@@ -207,7 +207,6 @@ const WhyChooseUs = () => {
                                         <img
                                             src={item.image}
                                             alt="img"
-                                            className="img img-fluid"
                                         />
                                     </Typography>
                                     <Typography component="div" className="content-holder">

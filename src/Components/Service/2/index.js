@@ -558,7 +558,7 @@ const ServiceBlock2 = () => {
                   <Grid container spacing={5} alignItems="center">
                     <Grid item lg={2} md={12} sm={12}>
                       <Typography component="div" className="icon-holder">
-                        <img src={Image} alt="img" className="img img-fluid" />
+                        <img src={Image} alt="img" />
                       </Typography>
                     </Grid>
                     <Grid item lg={5} md={12} sm={12}>
@@ -595,7 +595,7 @@ const ServiceBlock2 = () => {
                   <Grid container spacing={5} alignItems="center">
                     <Grid item lg={2} md={12} sm={12}>
                       <Typography component="div" className="icon-holder">
-                        <img src={Image2} alt="img" className="img img-fluid" />
+                        <img src={Image2} alt="img" />
                       </Typography>
                     </Grid>
                     <Grid item lg={5} md={12} sm={12}>
@@ -632,7 +632,7 @@ const ServiceBlock2 = () => {
                   <Grid container spacing={5} alignItems="center">
                     <Grid item lg={2} md={12} sm={12}>
                       <Typography component="div" className="icon-holder">
-                        <img src={Image3} alt="img" className="img img-fluid" />
+                        <img src={Image3} alt="img" />
                       </Typography>
                     </Grid>
                     <Grid item lg={5} md={12} sm={12}>

@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
                         ? "1px solid rgba(255,255,255,.25)"
                         : `1px solid #d4d4d4`,
                 "& img": {
-                    maxHeight: "80px",
+                    maxHeight: "100px",
                     objectFit: "contain",
                 },
                 "& .title": {
@@ -151,37 +151,35 @@ const Header = () => {
             <Typography component="div" className="header-24">
                 <Typography component="div" className="profile-bg" align="center">
                     {theme.palette.mode === "dark" ? (
-                        <img src={Image} alt="img" height="100"/>
+                        <img src={Image} alt="img"/>
                     ) : (
-                        <img src={Image2} alt="img" height="100"/>
+                        <img src={Image2} alt="img"/>
                     )}
                 </Typography>
                 <Typography component="nav" mt="0" mb={3} className="navigation">
-                    <ul>
-                        <Scrollspy items={['home','about', 'service']} currentClassName="is-current">
-                            <li>
-                                <a href="#home">
-                                    <HomeOutlinedIcon/>
-                                    <span>
+                    <Scrollspy items={['home','about', 'service']} currentClassName="is-current">
+                        <li>
+                            <a href="#home">
+                                <HomeOutlinedIcon/>
+                                <span>
                                       Home
                                     </span>
-                                </a>
-                            </li>
-                            {menu.map((item, i) => {
-                                let iconValue = iconsMap.get(item?.name);
-                                return (
-                                    <li key={i + "__"}>
-                                        <a href={`#${item.id}`}>
-                                            {iconValue}
-                                            <span>
+                            </a>
+                        </li>
+                        {menu.map((item, i) => {
+                            let iconValue = iconsMap.get(item?.name);
+                            return (
+                                <li key={i + "__"}>
+                                    <a href={`#${item.id}`}>
+                                        {iconValue}
+                                        <span>
                                               {item.name}
                                             </span>
-                                        </a>
-                                    </li>
-                                )
-                            })}
-                        </Scrollspy>
-                    </ul>
+                                    </a>
+                                </li>
+                            )
+                        })}
+                    </Scrollspy>
                 </Typography>
             </Typography>
         </header>
