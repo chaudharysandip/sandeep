@@ -4,8 +4,6 @@ import Typography from "@mui/material/Typography";
 import Typewriter from "typewriter-effect";
 import HTMLReactParser from "html-react-parser";
 import Particles from "react-particles";
-import Image from "../../Assets/Images/profile-bg.png";
-import Image2 from "../../Assets/Images/sandeep-v2.webp";
 import { loadFull } from "tsparticles";
 import { Button, Grid } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -210,11 +208,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const Image = "https://sandeep.com.np/uploads/images/profile-bg.png";
+const Image2 = "https://sandeep.com.np/uploads/images/sandeep-v2.webp";
+const download = "https://sandeep.com.np/uploads/images/new-sandip.pdf";
 const slider = [
   {
     title: "Sandeep Chaudhary",
     description: "Front-End Developer",
     summary: "I'm a Front-End Developer",
+    image: Image2,
+    file: download,
   },
 ];
 
@@ -245,7 +248,7 @@ const HomeSlider = () => {
       <DarkMode />
       <MobileMenu />
       {slider && slider.length ? (
-        <section className={classes.root}>
+        <section className={classes.root} id="home">
           <Particles
             className="ts-particles"
             canvasClassName="canvas-class-name"
@@ -462,7 +465,7 @@ const HomeSlider = () => {
                         loop: true,
                       }}
                     />
-                    <Button variant="contained" href="#" download>
+                    <Button variant="contained" href={item.file} download target="_blank" rel="noreferrer">
                       My Resume
                     </Button>
                   </Typography>
@@ -473,7 +476,7 @@ const HomeSlider = () => {
                       component="div"
                       className="img-holder background-image"
                       style={{
-                        backgroundImage: `url('${Image2}')`,
+                        backgroundImage: `url('${item.image}')`,
                       }}
                     />
                   </Typography>

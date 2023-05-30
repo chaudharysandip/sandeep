@@ -472,7 +472,7 @@ const ServiceBlock2 = () => {
   };
 
   return (
-    <section className={classes.root}>
+    <section className={classes.root} id="resume">
       <Container className="service-block-2">
         <Typography
           component="div"

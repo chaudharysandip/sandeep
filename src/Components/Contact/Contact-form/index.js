@@ -87,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
 				},
 			},
 			'& .MuiButtonBase-root': {
+				background: theme.palette.secondary.main,
 				position: 'relative',
 				boxShadow: 'none',
 				fontSize: theme.typography.h4,
@@ -107,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
 					width: '1.1em',
 					height: '1.1em',
 					borderRadius: "8px",
-					background: theme.palette.secondary.main,
+					background: theme.palette.primary.main,
 					transformOrigin: 'center',
 					transform: 'translate3d(-50%, -50%, 0) scale3d(0, 0, 0)',
 					transition: 'transform .3s ease-out',
@@ -117,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
 					fontSize: theme.typography.h3,
 				},
 				'&:hover': {
-					color: '#fff',
+					color: theme.palette.text.light,
 					'&::before': {
 						transform: 'translate3d(-50%, -50%, 0) scale3d(15, 15, 15)',
 					},

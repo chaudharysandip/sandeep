@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "Assets/Images/sandeep.webp";
 import { makeStyles } from "@mui/styles";
 import { Button, Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -135,6 +134,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const Image = "https://sandeep.com.np/uploads/images/sandeep.webp";
+const download = "https://sandeep.com.np/uploads/images/new-sandip.pdf";
 const aboutUs = {
   title: "About Me",
   summary: "I can develop that help people",
@@ -148,12 +149,13 @@ const aboutUs = {
     "achievements. I hope you enjoy learning a little bit " +
     "more about me!",
   image: Image,
+  file: download,
 };
 const Introduction = () => {
   const classes = useStyles();
 
   return aboutUs ? (
-    <section className={classes.root}>
+    <section className={classes.root} id="about-us">
       <Container className="introduction">
         <Grid container spacing={3} justifyContent="center">
           <Grid item lg={6} md={12} sm={12}>
@@ -178,7 +180,7 @@ const Introduction = () => {
               <Typography component="div" className="description" mb={6}>
                 {HTMLReactParser(aboutUs.description)}
               </Typography>
-              <Button variant="contained" href="#" download>
+              <Button variant="contained" href={aboutUs.file} download target="_blank" rel="noreferrer">
                 My Resume
               </Button>
             </Typography>

@@ -1,11 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Image from "Assets/Images/p-1.webp";
-import Image2 from "Assets/Images/p-2.webp";
-import Image3 from "Assets/Images/p-3.webp";
-import Image4 from "Assets/Images/p-4.webp";
-import Image5 from "Assets/Images/p-5.webp";
-import Image6 from "Assets/Images/p-6.webp";
 import { makeStyles } from "@mui/styles";
 import { Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -114,6 +108,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+const imagePath = "https://sandeep.com.np/uploads/images/";
+const Image = `${imagePath}/p-1.webp`;
+const Image2 = `${imagePath}/p-2.webp`;
+const Image3 = `${imagePath}/p-3.webp`;
+const Image4 = `${imagePath}/p-4.webp`;
+const Image5 = `${imagePath}/p-5.webp`;
+const Image6 = `${imagePath}/p-6.webp`;
 const event = [
   {
     title: "Kinbech Ecommerce",
@@ -151,7 +152,7 @@ const ServiceBlock = () => {
   const classes = useStyles();
 
   return event && event.length ? (
-    <section className={classes.root}>
+    <section className={classes.root} id="portfolio">
       <Container className="service-block-22">
         <Typography
           component="div"

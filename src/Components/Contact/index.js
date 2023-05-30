@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 				'& .MuiGrid-item': {
 					width: '100%',
 					'& .contact-form-holder': {
-						background: 'rgba(255,255,255,.25)',
+						background: 'rgb(0 0 0 / 20%)',
 						border: '1px solid rgba(255,255,255,.25)',
 						padding: theme.spacing(10, 6),
 						borderRadius: "15px",
@@ -51,7 +51,6 @@ const useStyles = makeStyles((theme) => ({
 											'linear-gradient(to left, #43e97b 0%, #38f9d7 100%)',
 									},
 								},
-
 								'& .icon-holder': {
 									background:
 										'radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%)',
@@ -104,7 +103,7 @@ const Contact = () => {
 	const classes = useStyles();
 
 	return (
-		<section className={classes.root}>
+		<section className={classes.root} id="contact-us">
 			<Container className="contact">
 				<Grid container spacing={6}>
 					<Grid item lg={7} md={12} sm={12}>
