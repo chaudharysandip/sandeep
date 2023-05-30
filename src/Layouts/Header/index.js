@@ -151,9 +151,9 @@ const Header = () => {
             <Typography component="div" className="header-24">
                 <Typography component="div" className="profile-bg" align="center">
                     {theme.palette.mode === "dark" ? (
-                        <img src={Image} alt="img" height="100px"/>
+                        <img src={Image} alt="img" height="100"/>
                     ) : (
-                        <img src={Image2} alt="img" height="100px"/>
+                        <img src={Image2} alt="img" height="100"/>
                     )}
                 </Typography>
                 <Typography component="nav" mt="0" mb={3} className="navigation">

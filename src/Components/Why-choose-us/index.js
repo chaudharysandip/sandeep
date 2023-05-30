@@ -206,7 +206,7 @@ const WhyChooseUs = () => {
                                     <Typography component="div" className="icon-holder" mb={3}>
                                         <img
                                             src={item.image}
-                                            alt={item.title}
+                                            alt="img"
                                             className="img img-fluid"
                                         />
                                     </Typography>
