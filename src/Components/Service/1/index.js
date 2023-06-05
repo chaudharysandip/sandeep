@@ -132,7 +132,7 @@ const event = [
     externalLink: "",
   },
   {
-    title: "Yara Cloud",
+    title: "Yarsa Cloud",
     image: Image,
     externalLink: "",
   },

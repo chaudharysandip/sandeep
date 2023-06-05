@@ -24,7 +24,9 @@ const App = () => {
 
   useEffect(() => {
     localStorage.setItem("themeMode", modeName);
-    setLoader(false);
+    setTimeout(()=>{
+      setLoader(false);
+    }, 1000)
   }, [modeName]);
 
   return loader ? (

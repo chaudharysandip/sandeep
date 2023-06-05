@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
                 "& img": {
                     maxHeight: "100px",
                     objectFit: "contain",
+                    width: "100%",
                 },
                 "& .title": {
                     color: theme.palette.text.gray,
