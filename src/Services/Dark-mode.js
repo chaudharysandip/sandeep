@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { makeStyles } from "@mui/styles";
-import IconButton from "@mui/material/IconButton";
 import { ModeContext } from "./Mode-context";
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
+import {Button, FormGroup} from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     top: "20px",
     zIndex: 1,
     "& .dark-mode": {
-      "& .MuiIconButton-root": {
+      "& .MuiButtonBase-root": {
         borderRadius: 0,
         padding: 0,
         backgroundColor: "transparent",
@@ -110,15 +110,22 @@ const DarkMode = () => {
   return (
     <div className={classes.root}>
       <div className="dark-mode">
-        <IconButton
+        <Button
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
           color="inherit"
         >
-          <FormControlLabel
-            control={<MaterialUISwitch sx={{ m: 1 }} />}
-            label=""
-          />
-        </IconButton>
+          <FormGroup>
+            <FormControlLabel
+                control={<MaterialUISwitch sx={{ m: 1 }} />}
+                label="dark-mode"
+                sx={{
+                  "& .MuiFormControlLabel-label": {
+                    display: "none",
+                  },
+                }}
+            />
+          </FormGroup>
+        </Button>
       </div>
     </div>
   );

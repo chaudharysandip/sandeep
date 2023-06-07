@@ -191,7 +191,7 @@ const WhyChooseUs = () => {
                     align="center"
                     mb={10}
                 >
-                    <Typography variant="h6" className="sub-title">
+                    <Typography variant="span" className="sub-title">
                         My Expertise
                     </Typography>
                     <Typography variant="h1" className="title">

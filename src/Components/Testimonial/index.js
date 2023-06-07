@@ -151,7 +151,7 @@ const Testimonial = () => {
           align="center"
           mb={5}
         >
-          <Typography variant="h6" className="sub-title">
+          <Typography variant="span" className="sub-title">
             My Experience
           </Typography>
           <Typography variant="h1" className="title">
@@ -183,17 +183,18 @@ const Testimonial = () => {
                   {HTMLReactParser(item.description)}
                 </Typography>
                 <Typography
-                  variant="h3"
+                  variant="span"
                   className="name"
                   mb={1}
                   color="#fff"
                   fontSize="18px"
                   fontWeight="bold"
+                  display="block"
                 >
                   {item.name}
                 </Typography>
                 <Typography
-                  variant="h6"
+                  variant="span"
                   className="designation"
                   color="#fff"
                   fontStyle="italic"

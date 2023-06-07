@@ -171,7 +171,7 @@ const Introduction = () => {
           </Grid>
           <Grid item lg={6} md={12} sm={12}>
             <Typography component="div" className="content-holder">
-              <Typography vaiant="h5" className="sub-title" mb={1}>
+              <Typography vaiant="span" className="sub-title" mb={1}>
                 {aboutUs.title}
               </Typography>
               <Typography vaiant="h1" className="title" mb={6}>

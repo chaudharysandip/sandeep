@@ -12,6 +12,7 @@ import Typography from "@mui/material/Typography";
 import {makeStyles} from "@mui/styles";
 import {useTheme} from "@mui/styles";
 import Scrollspy from 'react-scrollspy';
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -158,29 +159,29 @@ const Header = () => {
                     )}
                 </Typography>
                 <Typography component="nav" mt="0" mb={3} className="navigation">
-                    <Scrollspy items={['home','about', 'service']} currentClassName="is-current">
+                    <ul>
                         <li>
-                            <a href="#home">
+                            <Link to="/">
                                 <HomeOutlinedIcon/>
                                 <span>
                                       Home
                                     </span>
-                            </a>
+                            </Link>
                         </li>
                         {menu.map((item, i) => {
                             let iconValue = iconsMap.get(item?.name);
                             return (
                                 <li key={i + "__"}>
-                                    <a href={`#${item.id}`}>
+                                    <Link to="#">
                                         {iconValue}
                                         <span>
                                               {item.name}
                                             </span>
-                                    </a>
+                                    </Link>
                                 </li>
                             )
                         })}
-                    </Scrollspy>
+                    </ul>
                 </Typography>
             </Typography>
         </header>

@@ -106,7 +106,7 @@ const Contact = () => {
 				<Grid container spacing={6}>
 					<Grid item lg={7} md={12} sm={12}>
 						<Typography component="div" className="contact-form-holder">
-							<Typography variant="h3" className="contact-title" mb={2}>
+							<Typography variant="h1" className="contact-title" mb={2}>
 								Let's Talk?
 							</Typography>
 							<Typography className="description" mb={6}>
@@ -123,7 +123,7 @@ const Contact = () => {
 									<MailOutlineRoundedIcon />
 								</Typography>
 								<Typography component="div" className="divider">
-									<Typography variant="h6" className="contact-info-title">
+									<Typography variant="span" display="block" className="contact-info-title">
 										Email
 									</Typography>
 									<a href={`mailto: ${profile.email}`}>{profile.email}</a>
@@ -134,7 +134,7 @@ const Contact = () => {
 									<LocationOnOutlinedIcon />
 								</Typography>
 								<Typography component="div" className="divider">
-									<Typography variant="h6" className="contact-info-title">
+									<Typography variant="span" display="block" className="contact-info-title">
 										Address
 									</Typography>
 									<a href="#">{profile.address}</a>
@@ -145,7 +145,7 @@ const Contact = () => {
 									<PermPhoneMsgOutlinedIcon />
 								</Typography>
 								<Typography component="div" className="divider">
-									<Typography variant="h6" className="contact-info-title">
+									<Typography variant="span" display="block" className="contact-info-title">
 										Phone
 									</Typography>
 									<a href={`tel: ${profile.phone}`}>
@@ -162,6 +162,7 @@ const Contact = () => {
 							allowFullScreen
 							loading="lazy"
 							referrerPolicy="no-referrer-when-downgrade"
+							title="Sandeeps Location"
 						/>
 					</Grid>
 				</Grid>

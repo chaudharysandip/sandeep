@@ -503,19 +503,19 @@ const ServiceBlock2 = () => {
                 <Grid item lg={6} md={12} sm={12}>
                   <ul>
                     <li>
-                      <Typography variant="h5">Name:</Typography>
-                      <Typography variant="h6">{biography.name}</Typography>
+                      <Typography variant="span">Name:</Typography>
+                      <Typography variant="span">{biography.name}</Typography>
                     </li>
                     <li>
-                      <Typography variant="h5">Age:</Typography>
-                      <Typography variant="h6">{biography.age}</Typography>
+                      <Typography variant="span">Age:</Typography>
+                      <Typography variant="span">{biography.age}</Typography>
                     </li>
                     <li>
-                      <Typography variant="h5">Email:</Typography>
-                      <Typography variant="h6">{biography.email}</Typography>
+                      <Typography variant="span">Email:</Typography>
+                      <Typography variant="span">{biography.email}</Typography>
                     </li>
                     <li>
-                      <Typography variant="h5">Linkedin:</Typography>
+                      <Typography variant="span">Linkedin:</Typography>
                       <Link
                         to={biography.linkedin}
                         target="_blank"
@@ -529,20 +529,20 @@ const ServiceBlock2 = () => {
                 <Grid item lg={6} md={12} sm={12}>
                   <ul>
                     <li>
-                      <Typography variant="h5">Birthday:</Typography>
-                      <Typography variant="h6">{biography.birthday}</Typography>
+                      <Typography variant="span">Birthday:</Typography>
+                      <Typography variant="span">{biography.birthday}</Typography>
                     </li>
                     <li>
-                      <Typography variant="h5">Address:</Typography>
-                      <Typography variant="h6">{biography.address}</Typography>
+                      <Typography variant="span">Address:</Typography>
+                      <Typography variant="span">{biography.address}</Typography>
                     </li>
                     <li>
-                      <Typography variant="h5">Phone:</Typography>
-                      <Typography variant="h6">{biography.phone}</Typography>
+                      <Typography variant="span">Phone:</Typography>
+                      <Typography variant="span">{biography.phone}</Typography>
                     </li>
                     <li>
-                      <Typography variant="h5">Freelance:</Typography>
-                      <Typography variant="h6">
+                      <Typography variant="span">Freelance:</Typography>
+                      <Typography variant="span">
                         {biography.freelance}
                       </Typography>
                     </li>
@@ -599,7 +599,7 @@ const ServiceBlock2 = () => {
                       </Typography>
                     </Grid>
                     <Grid item lg={5} md={12} sm={12}>
-                      <Typography variant="h6" className="skill-title">
+                      <Typography variant="span" className="skill-title">
                         React Js
                       </Typography>
                     </Grid>
@@ -636,7 +636,7 @@ const ServiceBlock2 = () => {
                       </Typography>
                     </Grid>
                     <Grid item lg={5} md={12} sm={12}>
-                      <Typography variant="h6" className="skill-title">
+                      <Typography variant="span" className="skill-title">
                         HTML
                       </Typography>
                     </Grid>
@@ -682,14 +682,14 @@ const ServiceBlock2 = () => {
                         {item.title}
                       </Typography>
                       <Typography
-                        variant="h5"
+                        variant="span"
                         className="education-sub-title"
                         mb={3}
                       >
                         {item.subTitle}
                       </Typography>
                       <Typography
-                        variant="h6"
+                        variant="span"
                         className="education-year"
                         mb={3}
                       >

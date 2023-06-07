@@ -117,7 +117,7 @@ const Image5 = `${imagePath}/p-5.webp`;
 const Image6 = `${imagePath}/p-6.webp`;
 const event = [
   {
-    title: "Kinbech Ecommerce",
+    title: "Home Delivery",
     image: Image4,
     externalLink: "",
   },
@@ -160,7 +160,7 @@ const ServiceBlock = () => {
           align="left"
           mb={10}
         >
-          <Typography variant="h6" className="sub-title">
+          <Typography variant="span" className="sub-title">
             Recent Work Expertise
           </Typography>
           <Typography variant="h1" className="title">
