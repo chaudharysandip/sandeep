@@ -209,7 +209,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Image = "https://sandeep.com.np/uploads/images/profile-bg.png";
-const Image2 = "https://sandeep.com.np/uploads/images/sandeep-v2.webp";
+const Image2 = "https://sandeep.com.np/uploads/images/sandeep.webp";
 const download = "https://sandeep.com.np/uploads/images/new-sandip.pdf";
 const slider = [
   {
